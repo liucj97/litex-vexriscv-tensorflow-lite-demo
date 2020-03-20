@@ -62,16 +62,22 @@ Run TF Demo
 
     Execute Command           i2c.adxl345 MaxFifoDepth 1
     Execute Command           i2c.adxl345 FeedSample @${CURDIR}/circle.data
+    Execute Command           i2c.adxl345 FeedSample 0 15000 15000 128
+    Execute Command           i2c.adxl345 FeedSample 0 0 0 128
     Execute Command           i2c.adxl345 FeedSample @${CURDIR}/angle.data
+    Execute Command           i2c.adxl345 FeedSample 0 15000 15000 128
+    Execute Command           i2c.adxl345 FeedSample 0 0 0 128
     Execute Command           i2c.adxl345 FeedSample @${CURDIR}/circle.data
+    Execute Command           i2c.adxl345 FeedSample 0 15000 15000 128
+    Execute Command           i2c.adxl345 FeedSample 0 0 0 128
     Execute Command           i2c.adxl345 FeedSample @${CURDIR}/angle.data
-    Execute Command           i2c.adxl345 FeedSample 0 0 0 32
+    Execute Command           i2c.adxl345 FeedSample 0 15000 15000 128
+    Execute Command           i2c.adxl345 FeedSample 0 0 0 128
 
-    Create Terminal Tester    sysbus.uart  timeout=60
+    Create Terminal Tester    sysbus.uart  timeout=480
 
     Start Emulation
 
-    Wait For Line On Uart     Got id: 0xe5
     Wait For Line On Uart     Booting Zephyr OS
     Wait For Line On Uart     Got accelerometer
 

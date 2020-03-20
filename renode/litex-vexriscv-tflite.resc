@@ -5,6 +5,8 @@ include $ORIGIN/LiteX_I2C_Zephyr.cs
 
 mach create
 machine LoadPlatformDescription $ORIGIN/litex-vexriscv-tflite.repl
+#machine StartGdbServer 3333
+#logLevel -1 
 showAnalyzer uart
 showAnalyzer uart Antmicro.Renode.Analyzers.LoggingUartAnalyzer
 
@@ -17,8 +19,15 @@ runMacro $reset
 
 i2c.adxl345 MaxFifoDepth 1
 i2c.adxl345 FeedSample $ORIGIN/circle.data
+i2c.adxl345 FeedSample 0 15000 15000 128
+i2c.adxl345 FeedSample 0 0 0 128
 i2c.adxl345 FeedSample $ORIGIN/angle.data
+i2c.adxl345 FeedSample 0 15000 15000 128
+i2c.adxl345 FeedSample 0 0 0 128
 i2c.adxl345 FeedSample $ORIGIN/circle.data
+i2c.adxl345 FeedSample 0 15000 15000 128
+i2c.adxl345 FeedSample 0 0 0 128
 i2c.adxl345 FeedSample $ORIGIN/angle.data
-i2c.adxl345 FeedSample 0 0 0 32
+i2c.adxl345 FeedSample 0 15000 15000 128
+i2c.adxl345 FeedSample 0 0 0 128
 
